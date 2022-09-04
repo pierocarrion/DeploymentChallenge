@@ -8,9 +8,9 @@ services:
     restart: always
       #Comment if wanna pull from Docker Hub
     build: .
+      #
     ports:
       - 8085:8085
-      #
     links: 
       - mongo
     volumes:
