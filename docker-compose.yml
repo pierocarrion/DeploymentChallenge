@@ -2,23 +2,27 @@ version: "3"
 
 services:
   web: 
+      #Pulling Image from Docker Hub
     image: soldierstark/backend:1.0
     container_name: backend
     restart: always
+      #Comment if wanna pull from Docker Hub
     build: .
     ports:
       - 8085:8085
+      #
     links: 
       - mongo
     volumes:
       - .:/usr/src/app
 
   mongo:
+      #Pulling Image from Docker Hub
     image: soldierstark/database:1.0
     container_name: database
+      #Comment if wanna pull from Docker Hub
     build: 
       dockerfile: ./mongo_docker/Dockerfile
-    #container_name: mongodatabase
-    #image: mongo
+      #
     ports: 
       - 27017:27017
